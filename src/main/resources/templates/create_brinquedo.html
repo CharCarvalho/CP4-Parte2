@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Novo Brinquedo</title>
+</head>
+<body>
+    <h1>Adicionar Novo Brinquedo</h1>
+    <form th:action="@{/brinquedoteca/create}" th:object="${brinquedo}" method="post">
+        <label for="nm_brinquedo">Nome:</label>
+        <input type="text" id="nm_brinquedo" th:field="*{nm_brinquedo}"/><br/>
+
+        <label for="tipo_brinquedo">Tipo:</label>
+        <input type="text" id="tipo_brinquedo" th:field="*{tipo_brinquedo}"/><br/>
+
+        <label for="classificacao_brinquedo">Classificação:</label>
+        <input type="text" id="classificacao_brinquedo" th:field="*{classificacao_brinquedo}"/><br/>
+
+        <label for="tamanho_brinquedo">Tamanho:</label>
+        <input type="text" id="tamanho_brinquedo" th:field="*{tamanho_brinquedo}"/><br/>
+
+        <label for="preco_brinquedo">Preço:</label>
+        <input type="text" id="preco_brinquedo" th:field="*{preco_brinquedo}"/><br/>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

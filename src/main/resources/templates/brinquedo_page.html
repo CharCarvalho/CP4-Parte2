@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Brinquedos</title>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+<div th:insert="~{parts/navigation :: navigation}"></div>
+
+<h1>Bem-vindo à lista de brinquedos <span th:text="${userLogin}"></span></h1>
+
+	<table>
+        <thead>
+            <tr>
+                
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Classificação</th>
+                <th>Tamanho</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="brinquedo : ${brinquedos}">
+                
+                <td th:text="${brinquedo.nm_brinquedo}">Nome</td>
+                <td th:text="${brinquedo.tipo_brinquedo}">Tipo</td>
+                <td th:text="${brinquedo.classificacao_brinquedo}">Classificação</td>
+                <td th:text="${brinquedo.tamanho_brinquedo}">Tamanho</td>
+                <td th:text="${brinquedo.preco_brinquedo}">Preço</td>
+                <td>
+                    <a th:href="@{/brinquedoteca/edit/{id}(id=${brinquedo.id_brinquedo})}">Editar</a>
+                    <a th:href="@{/brinquedoteca/delete/{id}(id=${brinquedo.id_brinquedo})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/brinquedoteca/create">Adicionar Novo Brinquedo</a>
+
+<div th:insert="~{parts/footer :: footer}"></div>
+
+</body>
+
+
+
+</html>

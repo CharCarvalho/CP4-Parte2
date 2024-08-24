@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+	<title>Brinquedoteca</title>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+<div th:insert="~{parts/navigation :: navigation}"></div>
+
+<h1>Bem vindo(a) ao site da Brinquedoteca</h1>
+
+<form method="get" action="brinquedoteca">
+	<input name="login" type="text" placeholder="Digite seu nome: ">
+	<input type="submit" value="Me mostre os brinquedos!">
+</form>
+
+<div th:insert="~{parts/footer :: footer}"></div>
+
+</body>
+
+</html>
